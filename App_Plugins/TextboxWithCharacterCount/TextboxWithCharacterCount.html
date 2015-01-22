@@ -1,0 +1,26 @@
+﻿<div ng-controller="Scylla.TextboxWithCharacterCount" id="Scylla_TextboxWithCharacterCount">
+	<input ng-model="model.value"
+		   ng-change="update()"
+		   class="umb-editor umb-Textbox Textbox"
+		   type="text" /><br />
+	<small ng-class="model.className">{{model.remainingCount}} chars remaining</small>
+</div>
+
+<style>
+	#Scylla_TextboxWithCharacterCount
+	.red {
+		color: red;
+	}
+	#Scylla_TextboxWithCharacterCount
+	.yellow {
+		color: yellow;
+	}
+	#Scylla_TextboxWithCharacterCount
+	.orange {
+		color: orange;
+	}
+	#Scylla_TextboxWithCharacterCount
+	.green {
+		color: green;
+	}
+</style>

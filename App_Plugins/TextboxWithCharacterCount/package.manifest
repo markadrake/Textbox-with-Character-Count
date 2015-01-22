@@ -1,0 +1,30 @@
+﻿{
+	propertyEditors: [
+		{
+			alias: "Scylla.TextboxWithCharacterCount",
+			name: "Textbox with Character Count",
+			editor: {
+				view: "~/App_Plugins/TextboxWithCharacterCount/TextboxWithCharacterCount.html"
+			},
+			prevalues: {
+				fields: [
+					{
+						label: "Maximum",
+						description: "Maximum number of characters for validation.",
+						key: "maxCount",
+						view: "number",
+						validation: [
+							{
+								type: "Required"
+							}
+						]
+					}
+				]
+			},
+		}
+	]
+	,
+	javascript: [
+		'~/App_Plugins/TextboxWithCharacterCount/TextboxWithCharacterCount.controller.js'
+	]
+}
