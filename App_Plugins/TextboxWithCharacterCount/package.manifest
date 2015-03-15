@@ -18,6 +18,13 @@
 								type: "Required"
 							}
 						]
+					},
+					{
+						label: "MultiLine?",
+						description: "If selected, control will be rendered as a textarea instead of a textbox",
+						key: "multiline",
+						view: "boolean",
+						validation: [ ]
 					}
 				]
 			},
