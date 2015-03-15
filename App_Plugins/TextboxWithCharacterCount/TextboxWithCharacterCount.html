@@ -1,7 +1,7 @@
 ﻿<div ng-controller="Scylla.TextboxWithCharacterCount" id="Scylla_TextboxWithCharacterCount">
 	<input ng-model="model.value"
 		   ng-change="update()"
-           ng-show="model.config.multiline == false"
+           ng-show="model.config.multiline == null || model.config.multiline == false"
 		   class="umb-editor umb-Textbox Textbox"
 		   type="text" />
 
