@@ -1,0 +1,67 @@
+﻿{
+	propertyEditors: [{
+			alias: "Tags.Improved",
+			name: "Tags Improved",
+			icon: "icon-tags",
+			group: "common",
+			editor: {
+				view: "~/App_Plugins/propertyeditors/tags/tags.improved.html"
+			},
+			prevalues: {
+				fields: [{
+                    description: "Define a tag group",
+                    key: "group",
+                    label: "Tag group",
+                    view: "requiredfield"
+                },
+                {
+                    description: "Select whether to store the tags in cache as CSV (default) or as JSON. The only benefits of storage as JSON is that you are able to have commas in a tag value but this will require parsing the json in your views or using a property value converter",
+                    key: "storageType",
+                    label: "Storage Type",
+                    view: "~/App_Plugins/propertyeditors/tags/tags.prevalues.html"
+				}]
+			}
+		},
+		{
+			alias: "Textbox.Improved",
+			name: "Textbox Improved",
+			editor: {
+				view: "~/App_Plugins/propertyeditors/textbox/textbox.improved.html"
+			},
+			prevalues: {
+				fields: [{
+					label: "Maximum",
+					description: "Maximum number of characters for validation.",
+					key: "maxCount",
+					view: "number",
+					validation: [{
+						type: "Required"
+					}]
+				}]
+			}
+		},
+		{
+			alias: "Textarea.Improved",
+			name: "Textarea Improved",
+			icon: "icon-application-window-alt",
+			editor: {
+				view: "~/App_Plugins/propertyeditors/textarea/textarea.improved.html"
+			},
+			prevalues: {
+				fields: [{
+					label: "Maximum",
+					description: "Maximum number of characters for validation.",
+					key: "maxCount",
+					view: "number",
+					validation: [{
+						type: "Required"
+					}]
+				}]
+			}
+		}],
+
+	javascript: [
+		'~/App_Plugins/propertyeditors/tags/tags.improved.controller.js',
+		'~/App_Plugins/propertyeditors/textbox/textbox.improved.controller.js'
+	]
+}

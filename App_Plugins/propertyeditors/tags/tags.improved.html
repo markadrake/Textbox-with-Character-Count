@@ -1,0 +1,39 @@
+<div ng-controller="Umbraco.PropertyEditors.TagsImprovedController" class="umb-editor umb-tags">
+   
+     <div ng-if="isLoading">
+        <localize key="loading">Loading</localize>...
+    </div>
+
+    <div ng-if="!isLoading">
+
+        <input type="hidden" name="tagCount" ng-model="model.value.length" val-property-validator="validateMandatory" />
+
+        <span ng-repeat="tag in model.value" 
+			  class="label label-primary tag" 
+			  ng-class="{'tag-danger': danger}">
+            <span ng-bind-html="tag"
+				  ng-click="$parent.editTag(tag)"></span>
+            <i class="icon icon-delete" 
+			   ng-mouseenter="danger = true" 
+			   ng-mouseleave="danger = false" 
+			   ng-click="$parent.removeTag(tag)"></i>
+        </span>
+
+        <input type="text"
+               id="{{model.alias}}"
+               class="typeahead tags-{{model.alias}}"
+               ng-model="$parent.tagToAdd"
+               ng-keydown="$parent.addTagOnEnter($event)"
+               on-blur="$parent.addTag()"
+               localize="placeholder"
+               placeholder="@placeholders_enterTags" />
+
+    </div>
+    
+</div>
+
+<style>
+	.umb-tags .tag.tag-danger {
+		background: #d9534f;
+	}
+</style>

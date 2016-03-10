@@ -1,0 +1,24 @@
+﻿<div ng-controller="Umbraco.PropertyEditors.TextboxImprovedController">
+	<textarea ng-model="model.value" id="{{model.alias}}" name="textarea" rows="10" class="umb-editor umb-textarea textstring" val-server="value" ng-required="model.validation.mandatory" ng-change="update()"></textarea>
+	<small ng-class="model.className">{{model.remainingCount}} chars remaining</small>
+	<span class="help-inline" val-msg-for="textarea" val-toggle-msg="required">Required</span>
+	<span class="help-inline" val-msg-for="textarea" val-toggle-msg="valServer"></span>
+</div>
+
+<style>
+	.red {
+		color: red;
+	}
+
+	.yellow {
+		color: yellow;
+	}
+
+	.orange {
+		color: orange;
+	}
+
+	.green {
+		color: green;
+	}
+</style>
